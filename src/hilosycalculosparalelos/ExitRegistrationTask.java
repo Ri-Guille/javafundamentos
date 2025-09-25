@@ -1,0 +1,43 @@
+/**
+ * 
+ */
+package hilosycalculosparalelos;
+
+/**
+ * @author G 19 sept 2025
+ */
+public class ExitRegistrationTask implements Runnable {
+
+	private Aeropuerto aeropuerto;
+	
+	/**
+	 * @param aeropuerto
+	 */
+	public ExitRegistrationTask(Aeropuerto aeropuerto) {
+		this.aeropuerto = aeropuerto;
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void run() {
+		System.out.println("Start the task");
+		try {
+			//Obtener el nombre del hilo que se esta ejecutando e imprimimos su nombre.
+			System.out.println("The thread name is " + Thread.currentThread().getName());
+			//hacer que este hilo se duerma 2 segundos
+			Thread.sleep(2000);
+			System.out.println("The thread " + Thread.currentThread().getName()+ " has entered the sleep mode");
+			Thread.currentThread().getName();
+			for (int i = 0; i < 100; i++){
+			aeropuerto.decrease();
+			}
+			
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("The task is finished");
+	}
+	
+}
+
