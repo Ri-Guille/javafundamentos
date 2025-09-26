@@ -8,14 +8,13 @@ public class ArrayTest {
 		System.out.println(1==1);
 		
 		
-		int[] scores = {12, 123123, 435, 324};
-		int sum = scores[0] + scores[1] + scores[2] + scores[3];
-		System.out.println("the total score is " + sum);
-		int totalScore = 0;
-		for (int i = 0; i < scores.length; i++) {
-			totalScore =scores[i] + totalScore;
-		}
-		System.out.println("the total score is " + totalScore);
+		int[] scores = {1, 12, 78, 8};
+		
+		sumup(scores);
+		sumup(scores);
+		sumup(scores);
+
+		findMaxMin(scores);
 		
 		//Array
 		User[] Clients = new User[2];
@@ -38,5 +37,44 @@ public class ArrayTest {
 		//java.lang.ArrayIndexOutOfBoundsException
 		System.out.println(users [2]);
 		System.out.println(users.length);
+	}
+
+	/**
+	 * Encontrar el maximo y el minimo valor en la array
+	 * @param scores
+	 */
+	private static void findMaxMin(int[] scores) {
+		// TODO Auto-generated method stub
+		int max = scores[0];
+		int min = scores[scores.length - 1];
+		for (int i = 0; i < scores.length; i++) {
+			//si el max es menor que el dato aactual que hemois codigo "scores[i]"
+			//max = scores[i]
+//			if(condition) {
+//				statement;
+//			}
+//			else {
+//				statement;
+//			}
+			if(max < scores[i]) {
+				max = scores[i];
+			}
+		}
+		System.out.println("the maximum value is " + max);
+	}
+
+	/**
+	 * @param scores
+	 */
+	private static void sumup(int[] scores) {
+		int sum = scores[0] + scores[1] + scores[2] + scores[3];
+		System.out.println("the total score is " + sum);
+		int totalScore = 0;
+		for (int i = 0; i < scores.length; i++) {
+			totalScore =scores[i] + totalScore;
+		}
+		System.out.println("the total score is " + totalScore);
+		// TODO Auto-generated method stub
+		
 	}	
 }
