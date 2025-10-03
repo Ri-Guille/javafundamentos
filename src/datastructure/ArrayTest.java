@@ -1,5 +1,7 @@
 package datastructure;
 
+import java.util.Arrays;
+
 
 public class ArrayTest {
 	public static void main(String[] args) {
@@ -8,35 +10,68 @@ public class ArrayTest {
 		System.out.println(1==1);
 		
 		
-		int[] scores = {1, 12, 78, 8};
+		int[] scores = {1, 12, 78, 8, 45};
 		
-		sumup(scores);
-		sumup(scores);
+		reverse(scores);
+		
 		sumup(scores);
 
 		findMaxMin(scores);
 		
-		//Array
-		User[] Clients = new User[2];
-		User[] users = {new User(), new User()};
-		Clients[0] = new User("unknow", 10, "emilianogmail0", "arribadds", 0, false);
-		Clients[1] = new User("unknow", 10, "emilianogmail0", "arribadds", 1, false);
-		//Imprimir lo que deseemos, (longitud)
-		System.out.println(scores.length);
-		System.out.println(users.length);
-		System.out.println("longitud del array del cliente " + Clients.length);
-		for (int i = 0; i < Clients.length; i++) {
-			Clients[i] = new User("Luis" + i, i, "emilianogmail0", "arribadds", i, false);
-		}
-		for (int i = 0; i < Clients.length; i++) {
-			System.out.println(Clients[i].getName());
-		}		
-		boolean[] booleans = null;
+		switchValues(scores, 0, 4);
+		//{12, 1, 8, 45, 78}
 		
-		System.out.println(booleans.length);
-		//java.lang.ArrayIndexOutOfBoundsException
-		System.out.println(users [2]);
-		System.out.println(users.length);
+		createOnject();
+	}
+
+	/**
+	 * @param scores
+	 */
+	private static void reverse(int[] scores) {
+		
+		
+	}
+
+	/**
+	 * 
+	 */
+	private static void createOnject() {
+		//Array
+				User[] Clients = new User[2];
+				User[] users = {new User(), new User()};
+				Clients[0] = new User("unknow", 10, "emilianogmail0", "arribadds", 0, false);
+				Clients[1] = new User("unknow", 10, "emilianogmail0", "arribadds", 1, false);
+				//Imprimir lo que deseemos, (longitud)
+				System.out.println(users.length);
+				System.out.println("longitud del array del cliente " + Clients.length);
+				for (int i = 0; i < Clients.length; i++) {
+					Clients[i] = new User("Luis" + i, i, "emilianogmail0", "arribadds", i, false);
+				}
+				for (int i = 0; i < Clients.length; i++) {
+					System.out.println(Clients[i].getName());
+				}		
+				boolean[] booleans = null;
+				
+				System.out.println(booleans.length);
+				//java.lang.ArrayIndexOutOfBoundsException
+				System.out.println(users [2]);
+				System.out.println(users.length);
+		
+	}
+
+	/**
+	 * @param arr
+	 * @param i
+	 * @param j
+	 */
+	private static void switchValues(int[] arr, int i, int j) {
+		// Guarda temporalmente el elemento de posicion i en una variable
+		int num = arr[i];
+		//sustituye el elemento en posicion i con el elemento en posicion j
+		arr[i] = arr[j];
+		//asigna el elemento guardado en la variable "num" a la posicion j del array
+		arr[j] = num;
+		System.out.println(Arrays.toString(arr));
 	}
 
 	/**
