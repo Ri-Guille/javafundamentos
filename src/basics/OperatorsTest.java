@@ -11,10 +11,42 @@ public class OperatorsTest {
 	public static void main(String[] args) {
 		
 		arithmeticOperations();
+		arithmeticOperations();
+
 		
+		logicalOperatorsTest();
 		
 
 	}
+
+	/**
+	 * 
+	 */
+	private static void logicalOperatorsTest() {
+		//logical or || significa o 
+		System.out.println("operator or");		
+		System.out.println(true || false);
+		System.out.println(true || false);
+		System.out.println(false || true);
+		System.out.println(false || true);
+		
+		//logical or && significa o 
+		System.out.println("operator and");
+		System.out.println(true && false);
+		System.out.println(true && false);
+		System.out.println(false && true);
+		System.out.println(false && true);
+		
+		boolean eyeClosed = false;
+		boolean breathSlow = true;
+		if(eyeClosed && breathSlow)	
+			System.out.println("Is sleeping");
+		
+		else {
+			System.out.println("Not sleeping");
+		}
+	}
+	
 
 	/**
 	 * 

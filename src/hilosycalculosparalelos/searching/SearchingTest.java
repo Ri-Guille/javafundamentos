@@ -16,20 +16,38 @@ public class SearchingTest {
 
 	public static void main(String[] args) {
 
-		String targetName = "Luis";
-		System.out.println("Luis" == targetName);
+		String targetName = "Luis3000000";
+		System.out.println("Luis30" == targetName);
 		// InputStream in = System.in;
 
 		// 1 Crea un array de objetos de usuario
 		// 2 Usamos multiples hilos para encontrar un usuario concreto
 		// An array of user
-		User[] clients = new User[20000];
+		User[] clients = new User[20000000];
 		for (int i = 0; i < clients.length; i++) {
-			clients[i] = new User("Luis" + i, i, "emilianogmail0", "arribadds", i, false);
+			clients[i] = new User("Luis" + i, i, "emilianogmail0", "arribadds", i, false);                                                
 		}
-
+		
+		long startTime = System.currentTimeMillis();
 		searchWithOneThread(targetName, clients);
+		long endTime = System.currentTimeMillis();
+		System.out.println("The time used by the single thread mode is " + (endTime - startTime));
+		
+		startTime = System.currentTimeMillis();
 		searchingWithMultipleThreads(targetName, clients);
+		try {
+			/*
+			 * El hilo main entra en el modo sleep,
+			 *  va a ser despertado por otro hilo cuando este haya encontrado el usuario que estamos buscando
+			 */
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		endTime = System.currentTimeMillis();
+		System.out.println("The time used by the multiple thread mode is " + (endTime - startTime));
+
+		
 	}
 
 	private static void searchingWithMultipleThreads(String targetName, User[] clients) {
@@ -46,9 +64,9 @@ public class SearchingTest {
 		
 		int numOfThreads = Runtime.getRuntime().availableProcessors();
 		int index = clients.length / numOfThreads;
-		for (int i = 0; i < clients.length; i++) {
+		for (int i = 0; i < numOfThreads; i++) {
 			Thread thread5 = 
-					new Thread(new UserSearchingTask(targetName, clients, i * index, i * index));
+					new Thread(new UserSearchingTask(targetName, clients, i * index, i * index + index, Thread.currentThread()));
 			thread5.start();
 		}
 	}
@@ -59,8 +77,7 @@ public class SearchingTest {
 		 * que estamos buscando, imprimimos su id.
 		 */
 		for (int i = 0; i < clients.length; i++) {
-			if (clients[i].getName() == targetName)
-				;
+			if (clients[i].getName().equals(targetName))
 			{
 				System.out.println("id of the user is " + clients[i].getId());
 			}
