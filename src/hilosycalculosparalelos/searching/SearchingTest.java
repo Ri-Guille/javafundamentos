@@ -52,8 +52,8 @@ public class SearchingTest {
 
 	private static void searchingWithMultipleThreads(String targetName, User[] clients) {
 		
-//		Thread thread1 = new Thread(new UserSearchingTask(targetName, clients, 0, index));
-//		Thread thread2 = new Thread(new UserSearchingTask(targetName, clients, index, 2 * index));
+//		Thread thread1 = new Thread(new UserSearchingTask(targetName, clients, 0 * index, 1 * index));
+//		Thread thread2 = new Thread(new UserSearchingTask(targetName, clients, 1 * index, 2 * index)); 
 //		Thread thread3 = new Thread(new UserSearchingTask(targetName, clients, 2 * index, 3 * index));
 //		Thread thread4 = new Thread(new UserSearchingTask(targetName, clients, 3 * index, 4 * index));
 

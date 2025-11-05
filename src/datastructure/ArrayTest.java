@@ -18,24 +18,64 @@ public class ArrayTest {
 
 		findMaxMin(scores);
 		
-		switchValues(scores, 0, 4);
+		switchValues(scores, 1, 4);
 		//{12, 1, 8, 45, 78}
 		
-		createOnject();
+		createObject();
 	}
 
 	/**
 	 * @param scores
 	 */
 	private static void reverse(int[] scores) {
+		System.out.println(Arrays.toString(scores));
+		int temp = scores[0];
+		scores[0] = scores[scores.length - 1];
+		scores[scores.length - 1] = temp;
+		
+		temp = scores[1];
+		scores[1] = scores[scores.length - 1 - 1];
+		scores[scores.length - 1 - 1] = temp;
+		
+		temp = scores[2];
+		scores[2] = scores[scores.length - 1 - 2];
+		scores[scores.length - 1 - 2] = temp;
+		System.out.println(Arrays.toString(scores));
+		
+		int j = 0;
+		temp = scores[j];
+		scores[j] = scores[scores.length - 1 -j];
+		scores[scores.length - 1-j] = temp;
+		j++;
 		
 		
+		temp = scores[j];
+		scores[j] = scores[scores.length - 1 - j];
+		scores[scores.length - 1 - j] = temp;
+		j++;
+		
+		temp = scores[j];
+		scores[j] = scores[scores.length - 1 - j];
+		scores[scores.length - 1 - j] = temp;
+		j++;
+		System.out.println(Arrays.toString(scores));
+		
+		
+		for (int k = 0; k < scores.length / 2; k++) {
+			temp = scores[k];
+			scores[k] = scores[scores.length - 1 - k];
+			scores[scores.length - 1 - k] = temp;
+		
+			
+			
+		}
+		System.out.println(Arrays.toString(scores));
 	}
 
 	/**
 	 * 
 	 */
-	private static void createOnject() {
+	private static void createObject() {
 		//Array
 				User[] Clients = new User[2];
 				User[] users = {new User(), new User()};
