@@ -1,5 +1,7 @@
 package solarsystem;
 
+import java.security.PublicKey;
+
 public class CelestialBody {
 	
 	public float getGravity() {
@@ -56,9 +58,25 @@ public class CelestialBody {
 	String nameString = "unknown";
 	float radius = 234234;
 	int age = 232676753;
+	private String name;
 	//memoria se crea cuantos objetos se creen
 	public static float MINIMUM_SIZE = 67567.4f;
 	
 	public static void doSomething() {
 		System.out.println("do something");}
-}
+	
+	
+	//constructor
+	public CelestialBody() {}
+	public CelestialBody(String name) {
+		this.nameString = name;
+		}
+	
+	public CelestialBody(String name, double mass) {
+		this.name = name;
+		this.mass = mass;
+	}
+	
+	}
+	
+

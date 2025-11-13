@@ -2,7 +2,7 @@ package solarsystem;
 
 public class Test {
 	public static void main(String[] args) {
-		Planeta Planeta = new Planeta();
+		Planeta Planeta = new Planeta(0);
 		System.out.println(Planeta.age);
 		Planeta.doSomething();
 		Planeta.setAge(100);
