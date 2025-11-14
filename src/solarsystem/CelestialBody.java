@@ -55,7 +55,7 @@ public class CelestialBody {
 	public float gravity = 4444444444444444445555544.f;
 	protected double mass = 444444444444444444444444444444444444444444444444444444444.444444444;
 	private boolean hasOxygen = false;
-	String nameString = "unknown";
+	String nameString = "Tierra";
 	float radius = 234234;
 	int age = 232676753;
 	private String name;

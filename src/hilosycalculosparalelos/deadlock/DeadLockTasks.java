@@ -8,6 +8,12 @@ import java.time.Duration;
 /**
  * @author G 11 nov 2025
  */
+// 1 Se genera en un entorno distribuido o concurrente
+// 2 se ocurre si tenemos multiples locks en elk mismo contexto o entorno
+// 3 cuando accedemos a un recurso compartidoe protegido por multiples locks y
+//   empleamos los locks en diferentes ordenes
+
+// tenemos que emplear siempre los locks en el mismo orden en toda aplicacion
 public class DeadLockTasks {
 	//Any intance of a class can be used as a lock
 	Object lock1 = new Object();

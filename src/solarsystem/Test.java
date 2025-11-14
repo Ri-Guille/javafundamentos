@@ -10,5 +10,9 @@ public class Test {
 		
 		//Los miembros estaticos de una clase se acceden con el nombre de la clase, no los nombres de los objetos
 		//de la misma clase, porque los estaticos no estan asociados con cualquier objeto especifico.
+
+        Planeta moon = new Planeta(10000, "moon");
+        Planeta mars = new Planeta(34);
+        System.out.println("the name of the planet is " + moon.getNameString());
 	}
 }
